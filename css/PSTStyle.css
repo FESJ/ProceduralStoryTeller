@@ -9,10 +9,14 @@ body {
 h1 {
    font: 18pt Maitree serif;
    font-weight: bold;
+		background-color: #FFFFFF;
+}
+
+div {
+		background-color: #FFFFFF;
 }
 
 #canvas {
-	background-color: #FFFFFF;
 	width: 28em;
 	max-width: 80%;
 	margin-top: 3em;

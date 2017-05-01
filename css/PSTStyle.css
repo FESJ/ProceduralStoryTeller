@@ -1,30 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Maitree');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
 
 body {
-	background-color: #D0D0D0;
-   font: 14pt Maitree serif;
-   line-height: 125%;
+	background-color: #909090;
+   font-family: 'Droid Serif', serif;
+	font-size: 11pt;
+   line-height: 140%;
 }
 
 h1 {
-   font: 18pt Maitree serif;
+   font-size: 16pt;
    font-weight: bold;
-		background-color: #FFFFFF;
+	background-color: #FFFFFF;
+	margin-bottom: 2em;
 }
 
 div {
-		background-color: #FFFFFF;
+	background-color: #FFFFFF;
 }
 
 #canvas {
-	width: 28em;
+	width: 36em;
 	max-width: 80%;
 	margin-top: 3em;
-	margin-bottom: 8em;
+	margin-bottom: 6em;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 2em;
-	padding-left: 3em;
-	padding-right: 3em;
-	padding-bottom: 4em;
+	padding-top: 6em;
+	padding-left: 7em;
+	padding-right: 7em;
+	padding-bottom: 9em;
+}
+
+#gametext {
+	margin-bottom: 4em;
+	text-align: justify;
+}
+
+button {
+	width: 100%;
+	padding: 0.5em;
+	margin-bottom: 0.2em;
+	border: 1px solid black;
 }

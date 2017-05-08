@@ -14,8 +14,8 @@ class ProceduralStoryTeller {
 		this.settings = { start: 0, end: 1, traits: 3 };
 
 		// Input & Output from html-document
-   	this.output = document.getElementById('gametext');
-		this.input =  document.getElementById('gamechoices');
+		this.output = document.getElementById("gametext");
+		this.input =  document.getElementById("gamechoices");
 
 		// Accumulated traits for story & protagonists
 		this.traits = { protagonist: new Set(), story: new Set() };
@@ -39,7 +39,7 @@ class ProceduralStoryTeller {
 	// showEvent: Shows event that is given by ID
 	showEvent(id) {
 		// Output event-text
-   	this.output.innerHTML += "\n<p>" + events[id].text + "</p>";
+		this.output.innerHTML += "\n<p>" + events[id].text + "</p>";
 		// TODO: Customize text with traits
 
 		// Reset Buttons

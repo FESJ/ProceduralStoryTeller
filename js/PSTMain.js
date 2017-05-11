@@ -7,7 +7,8 @@
 var game;
 
 // If DOMContent loaded: Create game, start game
-document.addEventListener("DOMContentLoaded", function(event) {
+/* global ProceduralStoryTeller */
+document.addEventListener("DOMContentLoaded", function() {
 	game = new ProceduralStoryTeller();
 	game.start();
 });

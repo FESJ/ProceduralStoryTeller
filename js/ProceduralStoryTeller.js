@@ -7,6 +7,7 @@
 // Member: settings, output, input, traits, alltraits
 // Methods: (constructor), showEvent, resolveChoice, start
 // Needs: gametext-Div, gamechoices-Div, global events-Object
+/* global events:true */
 class ProceduralStoryTeller {
 	// Constructor
 	constructor() {

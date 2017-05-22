@@ -1,3 +1,10 @@
+// ProceduralStoryTeller: Helper functions
+// Author: Felix Sjöö
+// Source: https://developer.mozilla.org/
+"use strict";
+
+// Expands Set-Object to check if one set ist superset of the other
+// Checks every element in subset: If one element is not in superset, return false
 Set.prototype.isSuperset = function(subset) {
 	for (var elem of subset) {
 		if (!this.has(elem)) {
@@ -7,6 +14,8 @@ Set.prototype.isSuperset = function(subset) {
 	return true;
 };
 
+// Expands Set-Object to check if one set ist subset of the other
+// Checks every element in superset: If one element is not in subset, return false
 Set.prototype.isSubset = function(superset) {
 	for (var elem of this) {
 		if (!superset.has(elem)) {

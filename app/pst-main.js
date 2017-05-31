@@ -51,7 +51,7 @@ class ProceduralStoryTeller {
 		// Create all choice-buttons, if requirements are met
 		this.events[id].choices.forEach(function(choice, index) {
 			if(
-				new Set(choice.requirements.story).isSubset(this.traits.story) ||
+				new Set(choice.requirements.story).isSubset(this.traits.story) &&
 				new Set(choice.requirements.protagonist).isSubset(this.traits.protagonist)
 			){
 				this.input.innerHTML += "<button onClick='game.resolveChoice(" + id + "," + index +")'>" + choice.text + "</button>\n";

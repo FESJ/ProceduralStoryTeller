@@ -48,9 +48,14 @@ class ProceduralStoryTeller {
 		// Reset Buttons
 		this.input.innerHTML = "";
 
-		// Create all choice-buttons
+		// Create all choice-buttons, if requirements are met
 		this.events[id].choices.forEach(function(choice, index) {
-			this.input.innerHTML += "<button onClick='game.resolveChoice(" + id + "," + index +")'>" + choice.text + "</button>\n";
+			if(
+				!new Set(choice.requirements.story).isSubset(this.traits.story) ||
+				!new Set(choice.requirements.protagonist).isSubset(this.traits.protagonist)
+			){
+				this.input.innerHTML += "<button onClick='game.resolveChoice(" + id + "," + index +")'>" + choice.text + "</button>\n";
+			}
 		}, this);
 		// TODO: More or less choices with certain traits? Choice-Requirements!
 	}
@@ -62,11 +67,13 @@ class ProceduralStoryTeller {
 		// TODO: Customize text with traits
 
 		// Add choice-story-traits to game object
+		// TODO: Possible to loose traits?
 		for(let trait of this.events[id].choices[choice].traits.story) {
 			this.traits.story.add(trait);
 		}
 
 		// Add choice-protagonist-traits to game object
+		// TODO: Possible to loose traits?
 		for(let trait of this.events[id].choices[choice].traits.protagonist) {
 			this.traits.protagonist.add(trait);
 		}

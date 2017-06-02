@@ -24,18 +24,14 @@ class ProceduralStoryTeller {
 		this.traits = { protagonist: new Set(), story: new Set() };
 		this.alltraits = { protagonist: new Set() };
 
-		// Add all traits used in event-choices to alltraits
+		// Add all possible protagonist-traits to this.alltraits
 		this.events.forEach(function(event) {
+			this.alltraits.protagonist.addSetElements(new Set(event.requirements.protagonist));
 			event.choices.forEach(function(choice) {
-				for(let trait of choice.traits.protagonist) {
-					this.alltraits.protagonist.add(trait);
-				}
+				this.alltraits.protagonist.addSetElements(new Set(choice.requirements.protagonist));
+				this.alltraits.protagonist.addSetElements(new Set(choice.traits.protagonist.add));
+				this.alltraits.protagonist.addSetElements(new Set(choice.traits.protagonist.del));
 			}, this);
-
-			// Add all traits used in requirements to alltraits
-			for(let trait of event.requirements.protagonist) {
-				this.alltraits.protagonist.add(trait);
-			}
 		}, this);
 	}
 
@@ -57,7 +53,6 @@ class ProceduralStoryTeller {
 				this.input.innerHTML += "<button onClick='game.resolveChoice(" + id + "," + index +")'>" + choice.text + "</button>\n";
 			}
 		}, this);
-		// TODO: More or less choices with certain traits? Choice-Requirements!
 	}
 
 	// resolveChoice: Shows choice-text, resolve traits, generates next Event
@@ -66,17 +61,13 @@ class ProceduralStoryTeller {
 		this.output.innerHTML += "\n<p>" + this.events[id].choices[choice].outcome + "</p>";
 		// TODO: Customize text with traits
 
-		// Add choice-story-traits to game object
-		// TODO: Possible to loose traits?
-		for(let trait of this.events[id].choices[choice].traits.story) {
-			this.traits.story.add(trait);
-		}
+		// Add and remove choice-story-traits to game object
+		this.traits.story.addSetElements(this.events[id].choices[choice].traits.story.add);
+		this.traits.story.delSetElements(this.events[id].choices[choice].traits.story.del);
 
-		// Add choice-protagonist-traits to game object
-		// TODO: Possible to loose traits?
-		for(let trait of this.events[id].choices[choice].traits.protagonist) {
-			this.traits.protagonist.add(trait);
-		}
+		// Add and remove choice-protagonist-traits to game object
+		this.traits.protagonist.addSetElements(this.events[id].choices[choice].traits.protagonist.add);
+		this.traits.protagonist.delSetElements(this.events[id].choices[choice].traits.protagonist.del);
 
 		// To generate the next event:
 		// Set nextevent to 0

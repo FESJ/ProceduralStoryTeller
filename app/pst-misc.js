@@ -3,6 +3,18 @@
 // Source: https://developer.mozilla.org/
 "use strict";
 
+// bla
+// blubb
+Set.prototype.addSetElements = function(setB) {
+	for (var elem of setB) { this.add(elem); }
+};
+
+// bla
+// blubb
+Set.prototype.delSetElements = function(setB) {
+	for (var elem of setB) { this.delete(elem);	}
+};
+
 // Expands Set-Object to check if one set ist superset of the other
 // Checks every element in subset: If one element is not in superset, return false
 Set.prototype.isSuperset = function(subset) {

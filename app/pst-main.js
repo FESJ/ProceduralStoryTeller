@@ -50,7 +50,10 @@ class ProceduralStoryTeller {
 				new Set(choice.requirements.story).isSubset(this.traits.story) &&
 				new Set(choice.requirements.protagonist).isSubset(this.traits.protagonist)
 			){
-				this.input.innerHTML += "<button onClick='game.resolveChoice(" + id + "," + index +")'>" + choice.text + "</button>\n";
+				let fcall = "game.resolveChoice(" + id + "," + index +")";
+				this.input.innerHTML += "<button onClick='" + fcall + "'>";
+				this.input.innerHTML += choice.text;
+				this.input.innerHTML += "</button>\n";
 			}
 		}, this);
 	}

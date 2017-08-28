@@ -138,3 +138,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		}; getdata.send();
 	};	getsettings.send();
 });
+
+// while(!settings_loaded || !data_loaded){}
+// maybe?

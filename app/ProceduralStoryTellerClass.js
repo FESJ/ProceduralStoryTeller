@@ -2,7 +2,6 @@
 // Author: Felix Sjöö
 "use strict";
 
-// -----------------------------------------------------------------------------
 // ProceduralStoryTeller: class
 // Member: settings, output, input, traits, alltraits
 // Methods: (constructor), showEvent, resolveChoice, start
@@ -51,9 +50,7 @@ class ProceduralStoryTeller {
 				new Set(choice.requirements.protagonist).isSubset(this.traits.protagonist)
 			){
 				let fcall = "game.resolveChoice(" + id + "," + index +")";
-				this.input.innerHTML += "<button onClick='" + fcall + "'>";
-				this.input.innerHTML += choice.text;
-				this.input.innerHTML += "</button>\n";
+				this.input.innerHTML += "<button onClick='" + fcall + "'>" + choice.text + "</button>\n";
 			}
 		}, this);
 	}
@@ -102,42 +99,11 @@ class ProceduralStoryTeller {
 			this.traits.protagonist.add([...this.alltraits.protagonist][newtrait]);
 		}
 
+		// Empty divs
+		this.output.innerHTML = "";
+		this.input.innerHTML = "";
+
 		// Show starting event
 		this.showEvent(this.settings.start);
 	}
 }
-
-// -----------------------------------------------------------------------------
-// ProceduralStoryTeller: main
-// Reading datafiles, creating game-object, start the game
-
-// Global game object
-var game;
-
-// If DOMContent loaded: Load datafiles, create game, start game
-document.addEventListener("DOMContentLoaded", function() {
-	// Connection object to load settings
-	var getsettings = new XMLHttpRequest();
-	// Adding target file and instructions for the settings-file when loaded
-	getsettings.open("GET", "data/pst-settings.json", true);
-	getsettings.onloadend = function() {
-		// Parse settings
-		var settings = JSON.parse(this.responseText);
-		// Connection object to load data
-		var getdata = new XMLHttpRequest();
-		// Adding target file and instructions for the data-file when loaded
-		getdata.open("GET", "data/pst-story-data.json", true);
-		getdata.onloadend = function() {
-			// parse data
-			var data = JSON.parse(this.responseText);
-			// Create game object; Pass settings & data
-			game = new ProceduralStoryTeller(settings, data);
-			// start game!
-			game.start();
-
-		}; getdata.send();
-	};	getsettings.send();
-});
-
-// while(!settings_loaded || !data_loaded){}
-// maybe?

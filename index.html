@@ -2,9 +2,41 @@
 <html>
 	<head>
 		<title>ProceduralStoryTeller</title>
-		<link rel="stylesheet" href="./style/pst-standard.css">
-		<script src="./app/pst-misc.js"></script>
-		<script src="./app/pst-main.js"></script>
+		<link rel="stylesheet" href="./style/default.css">
+		<script src="./lib/SetExtensions.js"></script>
+		<script src="./app/ProceduralStoryTellerClass.js"></script>
+		<script>
+		// ProceduralStoryTeller: main
+		// Reading datafiles, creating game-object, start the game
+
+		// Global game object
+		var game;
+
+		// If DOMContent loaded: Load datafiles, create game, start game
+		document.addEventListener("DOMContentLoaded", function() {
+			// Connection object to load settings
+			var getsettings = new XMLHttpRequest();
+			// Adding target file and instructions for the settings-file when loaded
+			getsettings.open("GET", "data/settings.json", true);
+			getsettings.onloadend = function() {
+				// Parse settings
+				var settings = JSON.parse(this.responseText);
+				// Connection object to load data
+				var getdata = new XMLHttpRequest();
+				// Adding target file and instructions for the data-file when loaded
+				getdata.open("GET", "data/story-data.json", true);
+				getdata.onloadend = function() {
+					// parse data
+					var data = JSON.parse(this.responseText);
+					// Create game object; Pass settings & data
+					game = new ProceduralStoryTeller(settings, data);
+					// start game!
+					game.start();
+
+				}; getdata.send();
+			};	getsettings.send();
+		});
+		</script>
 	</head>
 	<body>
 		<div id="canvas">

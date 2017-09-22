@@ -1,251 +1,124 @@
 [
 	{
-		"requirements": {
-			"story": [],
-			"protagonist": []
-		},
-		"text": "Start - Duis aliquet fermentum ante ac lacinia. Cras suscipit urna eget quam feugiat, et consequat tellus iaculis. Nulla sagittis id dolor ac lobortis. Pellentesque sit amet elit turpis. Etiam ut lectus vitae tellus rutrum mollis ut in nisl. Donec nec odio dignissim, cursus nulla sed, euismod enim. Aenean dictum cursus feugiat. Phasellus pretium erat felis, cursus maximus orci pulvinar et. Donec odio quam, dapibus non velit in, feugiat rutrum metus. Quisque lobortis mi in ante consectetur tincidunt. Ut volutpat quam quis lectus dapibus facilisis. Cras id fermentum velit. Proin vel imperdiet lectus, at aliquam ipsum. Aliquam scelerisque quam sit amet magna laoreet, eget rutrum libero tristique. Sed eget urna nec magna dictum euismod nec a purus.",
+		"requirements": [],
+		"text": "Daves Blick wanderte durch die Dunkelheit, immer wieder zurück auf die Wand aus Geröll, die hinter ihm lag - dort wo Sekunden zuvor noch Tageslicht durch den Eingang zur Höhle schien. Der zerschundene Leichnam seines Freundes Robert ragte teilweise unter den Steinen hervor. Er hatte versucht, nach draußen zu gelangen, als das Beben begann. Er hatte es nicht geschafft. Gegen die Panik ankämpfend, wägte Dave seine Optionen ab, um aus dem Höhlensystem zu entkommen.",
 		"choices": [
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Foo.",
-				"outcome": "Donec odio quam, dapibus non velit in, feugiat rutrum metus. Quisque lobortis mi in ante consectetur tincidunt. Ut volutpat quam quis lectus dapibus facilisis. Cras id fermentum velit. Proin vel imperdiet lectus, at aliquam ipsum.",
+				"requirements": [],
+				"text": "Roberts Leichnam durchsuchen.",
+				"outcome": "Seine Finger tasteten zögerlich den toten Körper seines Freundes ab. Blut sickerte Zwischen den Steinen hervor, und Dave hatte Schwierigkeiten, seine Übelkeit zu unterdrücken. Dennoch gelang es ihm, ein Messer und einen Kompass an sich zu nehmen. Hastig wandte er sich ab und stieg hinab in die Dunkelheit.",
 				"traits": {
-					"story": {
-						"add": ["zet", "yps"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["beh", "ceh"],
-						"del": []
-					}
+					"add": ["Messer", "Kompass", "Übelkeit"],
+					"del": []
 				}
 			},
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Bar.",
-				"outcome": "Etiam ut lectus vitae tellus rutrum mollis ut in nisl. Donec nec odio dignissim, cursus nulla sed, euismod enim. Aenean dictum cursus feugiat. Phasellus pretium erat felis, cursus maximus orci pulvinar et.",
+				"requirements": [],
+				"text": "In die Dunkelheit hinabsteigen.",
+				"outcome": "Sich schnell von seinem toten Freund abwendend, eilte Dave tiefer in die Höhle, auf der verzweifelten Suche nach einem zweiten Ausgang aus dem Höhlensystem. Die Dunkelheit schien das Licht seiner Taschenlampe zu schlucken und ließ mehr und mehr Panik in ihm aufsteigen, die unbekannten, hallenden Geräusche taten ihr übriges.",
 				"traits": {
-					"story": {
-						"add": ["vau"],
-						"del": []
-					},
-					"protagonist": {
-						"add":["ah"],
-						"del":[]
-					}
+					"add": ["Achluophobie"],
+					"del": []
 				}
 			}
 		]
 	},
 	{
-		"requirements": {
-			"story": ["vau", "yps", "loco"],
-			"protagonist": ["ah", "beh", "ceh"]
-		},
-		"text": "End - Duis aliquet fermentum ante ac lacinia. Cras suscipit urna eget quam feugiat, et consequat tellus iaculis. Nulla sagittis id dolor ac lobortis. Pellentesque sit amet elit turpis. Etiam ut lectus vitae tellus rutrum mollis ut in nisl. Donec nec odio dignissim, cursus nulla sed, euismod enim. Aenean dictum cursus feugiat. Phasellus pretium erat felis, cursus maximus orci pulvinar et. Donec odio quam, dapibus non velit in, feugiat rutrum metus. Quisque lobortis mi in ante consectetur tincidunt. Ut volutpat quam quis lectus dapibus facilisis. Cras id fermentum velit. Proin vel imperdiet lectus, at aliquam ipsum. Aliquam scelerisque quam sit amet magna laoreet, eget rutrum libero tristique. Sed eget urna nec magna dictum euismod nec a purus.",
+		"requirements": ["Orientierung", "Kompass"],
+		"text": "Dave lief Stunden, vielleicht sogar Tage - es war schwierig, in der völligen Dunkelheit sein Zeitgefühl nicht zu verlieren. Doch mit Hilfe seines Kompasses und der Markierungen, die er auf seinem Weg hinterlassen hatte, fand er schliesslich einen Tunnel, der schwach beleuchtet einen Weg in die Freiheit verhieß. Vom Tageslicht geblendet, stolperte er aus der Höhle und ließ sich auf den Waldboden fallen. Tränen liefen über seine Wangen, halb Tränen der Freude um seine Freiheit, halb Tränen der Trauer um seinen Freund Robert.",
 		"choices": []
 	},
 	{
-		"requirements": {
-			"story": [],
-			"protagonist": []
-		},
-		"text": "Maecenas ullamcorper consectetur tortor in tristique. Quisque at dolor tortor. Praesent ut orci ac augue pellentesque feugiat sit amet et est. Suspendisse rhoncus arcu vel blandit rutrum. Phasellus non elit quis nibh gravida auctor. Fusce fringilla, dolor eget lobortis sodales, ex ante pellentesque sapien, sed efficitur nunc turpis in justo. Suspendisse eget nibh vel est posuere accumsan ac et enim. Suspendisse malesuada, nunc et molestie lobortis, arcu urna gravida arcu, lobortis rhoncus erat massa gravida augue. Duis tempus ex eleifend quam varius placerat. Etiam consequat felis nec ipsum interdum ultrices.",
+		"requirements": ["Durst", "Orientierungslos"],
+		"text": "Er hatte keine Ahnung, wie lange er schon unterwegs war, wie lange er schon nichts mehr getrunken hatte. Kaum fähig, einen zusammenhängenden Gedanken zu treffen, schleppte er sich durch die Dunkelheit, bis er nicht mehr konnte. Irgendwo, tief unter der Erde, brach Dave schliesslich zusammen - und wachte nie mehr auf.",
+		"choices": []
+	},
+	{
+		"requirements": [],
+		"text": "In der Dunkelheit fangen seine Augen an, ihm Streiche zu spielen - alles sieht gleich aus, alles kommt ihm bekannt vor. War er bereits in diesem Raum?",
 		"choices": [
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Ching.",
-				"outcome": "Fusce fringilla, dolor eget lobortis sodales, ex ante pellentesque sapien, sed efficitur nunc turpis in justo. Suspendisse eget nibh vel est posuere accumsan ac et enim. Suspendisse malesuada, nunc et molestie lobortis, arcu urna gravida arcu, lobortis rhoncus erat massa gravida augue.",
+				"requirements": ["Kompass"],
+				"text": "Den Kompass benutzen, um die richtige Richtung zu finden.",
+				"outcome": "Mit Hilfe seines Kompasses navigierte Dave durch die Tiefen, klammerte sich an die Sicherheit, die das kleine Gerät ihm bot.",
 				"traits": {
-					"story": {
-						"add": ["zet", "yps"],
-						"del":[]
-					},
-					"protagonist": {
-						"add": ["beh", "ceh"],
-						"del":[]
-					}
+					"add": [],
+					"del": []
 				}
 			},
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Chong.",
-				"outcome": "Suspendisse malesuada, nunc et molestie lobortis, arcu urna gravida arcu, lobortis rhoncus erat massa gravida augue. Duis tempus ex eleifend quam varius placerat. Etiam consequat felis nec ipsum interdum ultrices.",
+				"requirements": ["Messer"],
+				"text": "Markierungen in die Höhlenwände schnitzen.",
+				"outcome": "Dave nutzte sein Messer, um in die Höhlenwände Symbole zu schnitzen. So würde er die Orientierung behalten, falls er seinen eigenen Weg wieder kreuzen oder in eine Sackgasse geraten würde.",
 				"traits": {
-					"story": {
-						"add": ["vau", "yay"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["ah"],
-						"del": []
-					}
+					"add": ["Orientierung"],
+					"del": ["Orientierungslos"]
+				}
+			},
+			{
+				"requirements": [],
+				"text": "Den nächstbesten Gang wählen.",
+				"outcome": "Ein Gang scheint so gut wie der andere, also wählte Dave den nächstbesten - Irgendwann wird ihn sein Weg sicherlich an die Oberfläche führen.",
+				"traits": {
+					"add": ["Orientierungslos"],
+					"del": ["Orientierung"]
 				}
 			}
 		]
 	},
 	{
-		"requirements": {
-			"story": [],
-			"protagonist": []
-		},
-		"text": "In at ligula lobortis, mollis dui a, pretium nunc. Sed elementum dolor a sem luctus, vel rutrum sapien maximus. Aliquam erat volutpat. Aenean maximus sem quis leo auctor aliquam quis eu ante. Donec feugiat et arcu aliquam rhoncus. Integer egestas volutpat enim, id cursus leo. Aenean nec tempus leo, in auctor quam. Fusce maximus semper leo, laoreet condimentum mi vestibulum non. Vestibulum vestibulum tincidunt arcu vitae sagittis. Aenean scelerisque tortor elit, ut aliquam lacus viverra sed. Sed sollicitudin ac nulla id consequat. Nulla mattis orci tellus, a faucibus neque sagittis at. Morbi viverra libero id luctus tempus. Ut elementum urna a lectus pharetra, ut malesuada mi sagittis. Cras sagittis feugiat odio sed eleifend. Curabitur luctus vulputate lacus, ut lacinia arcu laoreet nec.",
+		"requirements": [],
+		"text": "Nach Stunden der Suche fühlte sich Daves Kehle staubtrocken an, er hatte seit Ewigkeiten nichts getrunken und fühlte sich dehydriert. Lange würde er so nicht mehr durchhalten können.",
 		"choices": [
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Fix.",
-				"outcome": "Morbi viverra libero id luctus tempus. Ut elementum urna a lectus pharetra, ut malesuada mi sagittis. Cras sagittis feugiat odio sed eleifend. Curabitur luctus vulputate lacus, ut lacinia arcu laoreet nec.",
+				"requirements": [],
+				"text": "Weiter gehen.",
+				"outcome": "Den Blick starr nach vorne gerichtet, schleppte er sich Schritt für Schritt weiter durch die endlosen Tunnel und Höhlen. Hoffentlich würde er bald Wasser finden.",
 				"traits": {
-					"story": {
-						"add": ["zet", "yps", "loco"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["beh", "ceh"],
-						"del": []
-					}
+					"add": ["Durst"],
+					"del": []
 				}
 			},
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Foxy.",
-				"outcome": "Vestibulum vestibulum tincidunt arcu vitae sagittis. Aenean scelerisque tortor elit, ut aliquam lacus viverra sed.",
+				"requirements": ["Feldflasche"],
+				"text": "Aus der Feldflasche trinken.",
+				"outcome": "Das Wasser aus seiner Feldflasche stillte seinen Durst, doch jetzt war die Flasche leer.",
 				"traits": {
-					"story": {
-						"add": ["vau"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["ah"],
-						"del": []
-					}
+					"add": [],
+					"del": ["Feldflasche"]
 				}
 			}
 		]
 	},
 	{
-		"requirements": {
-			"story": ["loco"],
-			"protagonist": []
-		},
-		"text": "Etiam nec massa et velit commodo tristique non malesuada elit. In quam lacus, pretium sit amet massa quis, egestas dapibus quam. Quisque aliquet placerat sagittis. Sed luctus eget urna quis aliquam. Donec vulputate laoreet nisl eu suscipit. Maecenas aliquam auctor tempus. Aliquam bibendum venenatis erat, vitae porttitor nisi condimentum vitae. Quisque vel efficitur turpis. Ut auctor bibendum dolor non tincidunt. Nunc et mattis libero, at ultricies massa. Aliquam nec magna a purus pulvinar scelerisque.",
+		"requirements": [],
+		"text": "Das Plätschern von Wasser schreckte ihn aus seiner Trance - ein unterirdischer Bach! Rauschend zog das Wasser an Dave vorbei in die Tiefen des Höhlensystems. Viel benötigtes Wasser, und vielleicht auch ein Weg ins Freie?",
 		"choices": [
 			{
-				"requirements": {
-					"story": [],
-					"protagonist": ["yay", "yo"]
-				},
-				"text": "Zoom.",
-				"outcome": "Donec odio quam, dapibus non velit in, feugiat rutrum metus. Quisque lobortis mi in ante consectetur tincidunt. Ut volutpat quam quis lectus dapibus facilisis. Cras id fermentum velit. Proin vel imperdiet lectus, at aliquam ipsum.",
+				"requirements": [],
+				"text": "Dem Fluss folgen.",
+				"outcome": "Den Blick starr nach vorne gerichtet, folgte er dem Fluss Schritt für Schritt weiter durch die endlosen Tunnel und Höhlen. Vielleicht würde ihn das nach draussen führen.",
 				"traits": {
-					"story": {
-						"add": ["zet", "yps"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["beh", "ceh"],
-						"del": []
-					}
+					"add": ["Orientierung"],
+					"del": []
 				}
 			},
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Bang.",
-				"outcome": "Etiam ut lectus vitae tellus rutrum mollis ut in nisl. Donec nec odio dignissim, cursus nulla sed, euismod enim. Aenean dictum cursus feugiat. Phasellus pretium erat felis, cursus maximus orci pulvinar et.",
+				"requirements": [],
+				"text": "Feldflasche auffüllen.",
+				"outcome": "Dave füllte seine Feldflasche bis zum Rand - das sollte hoffentlich einige Stunden reichen.",
 				"traits": {
-					"story": {
-						"add": ["vau"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["ah"],
-						"del": []
-					}
+					"add": ["Feldflasche"],
+					"del": []
 				}
 			},
 			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Pau.",
-				"outcome": "Sed luctus eget urna quis aliquam. Donec vulputate laoreet nisl eu suscipit. Maecenas aliquam auctor tempus.",
+				"requirements": [],
+				"text": "Aus dem Bach trinken.",
+				"outcome": "Mit großen Schlücken stillte er seinen Durst, bis sein Magen kein weiteres Wasser mehr aufnehmen konnte. Seufzend setzte er seinen Weg fort.",
 				"traits": {
-					"story": {
-						"add": ["vau"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["ah"],
-						"del": []
-					}
-				}
-			}
-		]
-	},
-	{
-		"requirements": {
-			"story": [],
-			"protagonist": ["secret"]
-		},
-		"text": "Curabitur sit amet eleifend augue. Nulla sagittis euismod felis, sed lobortis erat sagittis quis. Aliquam mollis urna et risus vehicula, eu consectetur nulla convallis. Nullam vulputate non tortor sit amet elementum. Nulla eu est porttitor, euismod orci quis, iaculis tellus. Nunc mollis magna in quam luctus varius. Nulla enim risus, auctor id vehicula vel, cursus nec libero. In et arcu sed ipsum elementum sollicitudin. In lobortis ornare sapien a tempus. Maecenas ultrices enim non nunc venenatis luctus. Aenean dignissim magna et libero mattis lacinia. Curabitur fermentum odio ut eros commodo, et iaculis justo porttitor. In nec accumsan turpis. Etiam consequat mattis ligula, id egestas nibh congue interdum.",
-		"choices": [
-			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Kewl.",
-				"outcome": "In et arcu sed ipsum elementum sollicitudin. In lobortis ornare sapien a tempus. Maecenas ultrices enim non nunc venenatis luctus.",
-				"traits": {
-					"story": {
-						"add": ["zet", "yps"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["beh", "ceh"],
-						"del": []
-					}
-				}
-			},
-			{
-				"requirements": {
-					"story": [],
-					"protagonist":[]
-				},
-				"text": "Rad.",
-				"outcome": "Aenean dignissim magna et libero mattis lacinia. Curabitur fermentum odio ut eros commodo, et iaculis justo porttitor.",
-				"traits": {
-					"story": {
-						"add": ["vau"],
-						"del": []
-					},
-					"protagonist": {
-						"add": ["ah"],
-						"del": []
-					}
+					"add": [],
+					"del": ["Durst"]
 				}
 			}
 		]

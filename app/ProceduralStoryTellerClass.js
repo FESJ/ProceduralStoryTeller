@@ -13,23 +13,24 @@ class ProceduralStoryTeller {
 		this.settings = _settings;
 
 		// Input & Output from html-document
+		this.title = document.getElementById("gametitle");
 		this.output = document.getElementById("gametext");
 		this.input =  document.getElementById("gamechoices");
 
 		// Data object
 		this.events = _data;
 
-		// Accumulated traits for story & protagonists
-		this.traits = { protagonist: new Set(), story: new Set() };
-		this.alltraits = { protagonist: new Set() };
+		// Accumulated traits
+		this.traits = new Set();
+		this.alltraits = new Set();
 
-		// Add all possible protagonist-traits to this.alltraits
+		// Add all possible traits to this.alltraits
 		this.events.forEach(function(event) {
-			this.alltraits.protagonist.addSetElements(new Set(event.requirements.protagonist));
+			this.alltraits.addSetElements(new Set(event.requirements));
 			event.choices.forEach(function(choice) {
-				this.alltraits.protagonist.addSetElements(new Set(choice.requirements.protagonist));
-				this.alltraits.protagonist.addSetElements(new Set(choice.traits.protagonist.add));
-				this.alltraits.protagonist.addSetElements(new Set(choice.traits.protagonist.del));
+				this.alltraits.addSetElements(new Set(choice.requirements));
+				this.alltraits.addSetElements(new Set(choice.traits.add));
+				this.alltraits.addSetElements(new Set(choice.traits.del));
 			}, this);
 		}, this);
 	}
@@ -45,12 +46,11 @@ class ProceduralStoryTeller {
 
 		// Create all choice-buttons, if requirements are met
 		this.events[id].choices.forEach(function(choice, index) {
-			if(
-				new Set(choice.requirements.story).isSubset(this.traits.story) &&
-				new Set(choice.requirements.protagonist).isSubset(this.traits.protagonist)
-			){
+			if(new Set(choice.requirements).isSubset(this.traits)){
 				let fcall = "game.resolveChoice(" + id + "," + index +")";
-				this.input.innerHTML += "<button onClick='" + fcall + "'>" + choice.text + "</button>\n";
+				this.input.innerHTML += "<button onClick='" + fcall + "'>";
+				this.input.innerHTML += choice.text;
+				this.input.innerHTML += "</button>\n";
 			}
 		}, this);
 	}
@@ -58,32 +58,28 @@ class ProceduralStoryTeller {
 	// resolveChoice: Shows choice-text, resolve traits, generates next Event
 	resolveChoice(id, choice) {
 		// Show choice-text
-		this.output.innerHTML += "\n<p>" + this.events[id].choices[choice].outcome + "</p>";
+		this.output.innerHTML += "\n<p>";
+		this.output.innerHTML += this.events[id].choices[choice].outcome;
+		this.output.innerHTML += "</p>";
 		// TODO: Customize text with traits
 
-		// Add and remove choice-story-traits to game object
-		this.traits.story.addSetElements(this.events[id].choices[choice].traits.story.add);
-		this.traits.story.delSetElements(this.events[id].choices[choice].traits.story.del);
-
-		// Add and remove choice-protagonist-traits to game object
-		this.traits.protagonist.addSetElements(this.events[id].choices[choice].traits.protagonist.add);
-		this.traits.protagonist.delSetElements(this.events[id].choices[choice].traits.protagonist.del);
+		// Add and remove choice-traits to game object
+		this.traits.addSetElements(this.events[id].choices[choice].traits.add);
+		this.traits.delSetElements(this.events[id].choices[choice].traits.del);
 
 		// To generate the next event:
-		// Set nextevent to 0
-		var nextevent = 0;
+		// Set nextevent to startevent
+		var nextevent = this.settings.start;
 
 		// While 0 (-> while no suitable event found)
-		while(nextevent == 0){
+		while(nextevent == this.settings.start){
 			// Pick random event
 			nextevent = Math.floor(Math.random() * this.events.length);
 
-			// Check if requirements are met: if not, reset to 0, else show
-			if(
-				!new Set(this.events[nextevent].requirements.story).isSubset(this.traits.story) ||
-				!new Set(this.events[nextevent].requirements.protagonist).isSubset(this.traits.protagonist)
-			){
-				nextevent = 0;
+			// Check if requirements are met: if not, reset to this.settings.start,
+			// else show
+			if(!new Set(this.events[nextevent].requirements).isSubset(this.traits)){
+				nextevent = this.settings.start;
 			}
 		}
 
@@ -95,9 +91,12 @@ class ProceduralStoryTeller {
 	start() {
 		// Create starting traits
 		for(let index = 0; index < this.settings.traits; index++) {
-			let newtrait = Math.floor(Math.random() * this.alltraits.protagonist.size);
-			this.traits.protagonist.add([...this.alltraits.protagonist][newtrait]);
+			let newtrait = Math.floor(Math.random() * this.alltraits.size);
+			this.traits.add([...this.alltraits][newtrait]);
 		}
+
+		// Set story title
+		this.title.innerHTML = this.settings.title;
 
 		// Empty divs
 		this.output.innerHTML = "";
@@ -107,3 +106,23 @@ class ProceduralStoryTeller {
 		this.showEvent(this.settings.start);
 	}
 }
+
+/* Example for needed story-data structure
+[
+	{
+		"requirements": [],
+		"text": "",
+		"choices": [
+			{
+				"requirements": [],
+				"text": "",
+				"outcome": "",
+				"traits": {
+					"add": [],
+					"del": []
+				}
+			}
+		]
+	}
+]
+*/

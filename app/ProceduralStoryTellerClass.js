@@ -22,6 +22,7 @@ class ProceduralStoryTeller {
 
 		// Accumulated traits
 		// TODO: Think about "negated" traits
+		// TODO: Think about trait-groups
 		this.traits = new Set();
 		this.alltraits = new Set();
 

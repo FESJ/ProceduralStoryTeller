@@ -48,9 +48,9 @@ class ProceduralStoryTeller {
 		this.events[id].choices.forEach(function(choice, index) {
 			if(new Set(choice.requirements).isSubset(this.traits)){
 				let fcall = "game.resolveChoice(" + id + "," + index +")";
-				this.input.innerHTML += "<button onClick='" + fcall + "'>";
-				this.input.innerHTML += choice.text;
-				this.input.innerHTML += "</button>\n";
+				this.input.innerHTML += "<button onClick='" + fcall + "'>"
+					+ choice.text
+					+ "</button>\n";
 			}
 		}, this);
 	}
@@ -58,9 +58,9 @@ class ProceduralStoryTeller {
 	// resolveChoice: Shows choice-text, resolve traits, generates next Event
 	resolveChoice(id, choice) {
 		// Show choice-text
-		this.output.innerHTML += "\n<p>";
-		this.output.innerHTML += this.events[id].choices[choice].outcome;
-		this.output.innerHTML += "</p>";
+		this.output.innerHTML += "\n<p>"
+			+ this.events[id].choices[choice].outcome
+			+ "</p>";
 		// TODO: Customize text with traits
 
 		// Add and remove choice-traits to game object

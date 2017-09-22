@@ -21,6 +21,7 @@ class ProceduralStoryTeller {
 		this.events = _data;
 
 		// Accumulated traits
+		// TODO: Think about "negated" traits
 		this.traits = new Set();
 		this.alltraits = new Set();
 

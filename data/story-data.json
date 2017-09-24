@@ -43,7 +43,7 @@
 				"outcome": "Mit Hilfe seines Kompasses navigierte Dave durch die Tiefen, klammerte sich an die Sicherheit, die das kleine Gerät ihm bot.",
 				"traits": {
 					"add": [],
-					"del": []
+					"del": ["Orientierungslos"]
 				}
 			},
 			{
@@ -119,6 +119,39 @@
 				"traits": {
 					"add": [],
 					"del": ["Durst"]
+				}
+			}
+		]
+	},
+	{
+		"requirements": ["Orientierung"],
+		"text": "Es war gut, die Sache strukturiert anzugehen: Stundenlang markierte Dave Abzweigung für Abzweigung, schloss Sackgassen aus, und erkundete das verwirrende System aus Gängen. In einem abgeschiedenen Teil der Höhle, ein Bein unter einem herabgefallenen Stein zertrümmert, fand er das Skelett eines vorherigen Besuchers, der in diesen Tunneln sein Grab gefunden hatte. Der Kleidung nach zu urteilen, war dieser Forscher bereits vor über hundert Jahren in diese Höhle gekommen - und hatte sie nie wieder verlassen.",
+		"choices": [
+			{
+				"requirements": ["Messer"],
+				"text": "Den Leichnam mit dem Messer ausschlachten.",
+				"outcome": "Dave nahm den Leichnam systematisch auseinander, um alles Brauchbare an sich zu nehmen. Er fand einen alten Kompass, der immernoch funktionsfähig war, den Stoff der Kleidung, den er in Streifen schnitt und ein kurzes Seil knüpfte, und den Oberschenkelknochen - ein etwas makaberer Fund, der allerdings vielleicht als Hebel hilfreich sein könnte. Schliesslich ließ er den Raum hinter sich.",
+				"traits": {
+					"add": ["Kompass", "Knochen", "Seil"],
+					"del": []
+				}
+			},
+			{
+				"requirements": [],
+				"text": "Den Leichnam vorsichtig durchsuchen.",
+				"outcome": "Vorsichtig durchsuchte Dave die Taschen und die nähere Umgebung des toten Forschers, und fand einen alten Kompass, der zu seiner Freude immernoch funktionierte. Im stillen dankte er dem Toten und setzte seinen Weg fort.",
+				"traits": {
+					"add": ["Kompass"],
+					"del": []
+				}
+			},
+			{
+				"requirements": [],
+				"text": "Den Leichnam ignorieren.",
+				"outcome": "Dave ignorierte den Toten, markierte den Gang als Sackgasse und setzte seinen Weg fort.",
+				"traits": {
+					"add": [],
+					"del": []
 				}
 			}
 		]

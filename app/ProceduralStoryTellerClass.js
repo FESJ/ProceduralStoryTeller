@@ -37,33 +37,31 @@ class ProceduralStoryTeller {
 		}, this);
 	}
 
-	// showEvent: Shows event that is given by ID
-	showEvent(id) {
-		// Output event-text
-		this.output.innerHTML += "\n<p>" + this.events[id].text + "</p>";
-		// TODO: Customize text with traits
+	// resolveTraits: Customize text with trait-options
+	resolveTraits(_text) {
+		let text = _text;
 
-		// Reset Buttons
-		this.input.innerHTML = "";
+		while(text.search(/\[[a-zA-Z0-9\s]*#[a-zA-Z0-9\s\!\.\,\;\-\?]*\]/) != -1) {
+			let a = text.search(/\[[a-zA-Z0-9\s]*#[a-zA-Z0-9\s\!\.\,\;\-\?]*\]/) +1;
+			let z = text.search(/\]/);
+			let temp = text.slice(a, z).split("#");
 
-		// Create all choice-buttons, if requirements are met
-		this.events[id].choices.forEach(function(choice, index) {
-			if(new Set(choice.requirements).isSubset(this.traits)){
-				let fcall = "game.resolveChoice(" + id + "," + index +")";
-				this.input.innerHTML += "<button onClick='" + fcall + "'>"
-					+ choice.text
-					+ "</button>\n";
+			if(this.traits.has(temp[0])) {
+				text = text.replace("[" + temp[0] + "#" + temp[1] + "]", temp[1]);
 			}
-		}, this);
+			else {
+				text = text.replace("[" + temp[0] + "#" + temp[1] + "]", "");
+			}
+		}
+		return text;
 	}
 
 	// resolveChoice: Shows choice-text, resolve traits, generates next Event
 	resolveChoice(id, choice) {
 		// Show choice-text
 		this.output.innerHTML += "\n<p>"
-			+ this.events[id].choices[choice].outcome
+			+ this.resolveTraits(this.events[id].choices[choice].outcome)
 			+ "</p>";
-		// TODO: Customize text with traits
 
 		// Add and remove choice-traits to game object
 		this.traits.addSetElements(this.events[id].choices[choice].traits.add);
@@ -87,6 +85,27 @@ class ProceduralStoryTeller {
 
 		// Show event!
 		this.showEvent(nextevent);
+	}
+
+	// showEvent: Shows event that is given by ID
+	showEvent(id) {
+		// Output event-text
+		this.output.innerHTML += "\n<p>"
+			+ this.resolveTraits(this.events[id].text)
+			+ "</p>";
+
+		// Reset Buttons
+		this.input.innerHTML = "";
+
+		// Create all choice-buttons, if requirements are met
+		this.events[id].choices.forEach(function(choice, index) {
+			if(new Set(choice.requirements).isSubset(this.traits)){
+				let fcall = "game.resolveChoice(" + id + "," + index +")";
+				this.input.innerHTML += "<button onClick='" + fcall + "'>"
+					+ choice.text
+					+ "</button>\n";
+			}
+		}, this);
 	}
 
 	// start: Start the game

@@ -41,18 +41,22 @@ class ProceduralStoryTeller {
 	resolveTraits(_text) {
 		let text = _text;
 
-		while(text.search(/\[[a-zA-Z0-9\s]*#[a-zA-Z0-9\s\!\.\,\;\-\?]*\]/) != -1) {
-			let a = text.search(/\[[a-zA-Z0-9\s]*#[a-zA-Z0-9\s\!\.\,\;\-\?]*\]/) +1;
+		// As long as customizable modules exist: Find them
+		while(text.search(/\[.*#.*\]/) != -1) {
+			let a = text.search(/\[.*#.*\]/) +1;
 			let z = text.search(/\]/);
 			let temp = text.slice(a, z).split("#");
 
+			// If corresponding trait exists: Replace module with text
 			if(this.traits.has(temp[0])) {
 				text = text.replace("[" + temp[0] + "#" + temp[1] + "]", temp[1]);
 			}
+			// If not: Remove module
 			else {
 				text = text.replace("[" + temp[0] + "#" + temp[1] + "]", "");
 			}
 		}
+		// Return processed text
 		return text;
 	}
 

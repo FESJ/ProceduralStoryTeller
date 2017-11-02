@@ -3,9 +3,11 @@
 "use strict";
 
 // ProceduralStoryTeller: class
-// Member: settings, output, input, traits, alltraits
-// Methods: (constructor), showEvent, resolveChoice, start
-// Needs: gametext-Div, gamechoices-Div, global events-Object
+// Member: settings, events, output, input, traits, alltraits
+// Methods: (constructor), showEvent, resolveChoice,
+// resolveTraits, start
+// Needs: gametext-Div, gamechoices-Div, gametitle-Div,
+// _settings, _data
 class ProceduralStoryTeller {
 	// Constructor: gets loaded settings and data
 	constructor(_settings, _data) {
